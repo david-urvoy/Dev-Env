@@ -1,0 +1,6 @@
+
+CONFIG_HOME=/home/david/development/config
+
+if [ -f $CONFIG_HOME/.shell-config ]; then
+	. $CONFIG_HOME/.shell-config
+fi

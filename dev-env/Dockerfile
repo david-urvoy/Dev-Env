@@ -7,8 +7,7 @@ RUN useradd -ms /bin/bash david &&\
 	sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" &&\
 	dnf install -y powerline-fonts &&\
 	dnf install -y emacs &&\
-	mkdir -p /home/david/development/config &&\
-	mkdir -p /home/david/development/projects
+	mkdir -p /home/david/development/config
 
 USER david
 WORKDIR /home/david

@@ -7,7 +7,9 @@ RUN useradd -ms /bin/bash david &&\
 	sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" &&\
 	dnf install -y powerline-fonts &&\
 	dnf install -y emacs &&\
-	dnf install -y vim &&\
+	dnf install -y neovim &&\
+	dnf install -y ping &&\
+	dnf install -y curl &&\
 	mkdir -p /home/david/development/config
 
 USER david

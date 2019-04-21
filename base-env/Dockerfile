@@ -6,7 +6,6 @@ RUN useradd -ms /bin/bash david &&\
 	dnf install -y git &&\
 	sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" &&\
 	dnf install -y powerline-fonts &&\
-	dnf install -y emacs &&\
 	dnf install -y neovim &&\
 	dnf install -y ping &&\
 	dnf install -y curl &&\

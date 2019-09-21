@@ -13,6 +13,6 @@ RUN sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/too
 RUN dnf install -y powerline-fonts
 
 #USER david
-#WORKDIR /home/david
+WORKDIR /root
 
 ENTRYPOINT /bin/zsh

@@ -1,5 +1,6 @@
 FROM base-env:latest
 
+USER root
 
 RUN dnf install -y nodejs &&\
     npm i -g typescript &&\
@@ -10,6 +11,8 @@ RUN dnf install -y go
 RUN dnf install -y rust
 
 RUN dnf install -y ghc cabal-install
+
+USER david
 
 #    dnf install -y java-1.8.0-openjdk-devel &&\
 #    dnf install -y maven &&\

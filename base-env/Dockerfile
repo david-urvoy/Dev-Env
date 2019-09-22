@@ -1,7 +1,6 @@
 FROM fedora:latest
 
-#useradd -ms /bin/bash david &&\
-RUN dnf install -y zsh &&\
+RUN     dnf install -y zsh &&\
 	dnf install -y curl &&\
 #	dnf install -y ping &&\
 	dnf install -y neovim &&\
@@ -12,7 +11,8 @@ RUN sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/too
 
 RUN dnf install -y powerline-fonts
 
+#RUN useradd -u 1001 -d /home/development -ms /bin/bash david
 #USER david
-WORKDIR /root
+#WORKDIR /home/development
 
 ENTRYPOINT /bin/zsh

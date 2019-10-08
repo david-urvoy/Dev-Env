@@ -8,11 +8,12 @@ RUN dnf install -y nodejs &&\
 
 RUN dnf install -y go
 
-RUN dnf install -y rust
-
 RUN dnf install -y haskell-platform
 
 USER david
+
+RUN curl https://sh.rustup.rs -sSf | sh -s -- -y
+ENV PATH="/home/david/.cargo/bin:${PATH}"
 #    dnf install -y java-1.8.0-openjdk-devel &&\
 #    dnf install -y maven &&\
 #    dnf install -y gradle &&\

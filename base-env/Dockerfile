@@ -7,6 +7,7 @@ RUN     dnf install -y zsh &&\
 	dnf install -y tmux &&\
 	dnf install -y git
 RUN dnf install -y powerline-fonts
+RUN pip3 install pynvim
 
 RUN useradd -u 1001 -d /home/dev-user -ms /bin/bash dev-user
 USER dev-user
@@ -18,5 +19,7 @@ RUN curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://r
 RUN mkdir -p /home/dev-user/development/projects
 RUN git clone https://github.com/DavidUrvoy/Bash-Config.git /home/dev-user/development/config
 RUN . /home/dev-user/development/config/install.sh
+
+RUN nvim +PlugInstall +qall
 
 ENTRYPOINT /bin/zsh

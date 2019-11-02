@@ -4,9 +4,11 @@ RUN     dnf install -y zsh &&\
 	dnf install -y curl &&\
 	dnf install -y neovim &&\
 	dnf install -y tmux &&\
+	dnf install -y nodejs &&\
 	dnf install -y git
 RUN dnf install -y powerline-fonts
 
+RUN dnf install -y python
 RUN pip3 install pynvim
 
 RUN useradd -u 1001 -d /home/dev-user -ms /bin/bash dev-user

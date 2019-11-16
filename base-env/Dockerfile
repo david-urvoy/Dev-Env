@@ -10,6 +10,8 @@ RUN useradd -u 1001 -d /home/dev-user -ms /bin/bash dev-user
 USER dev-user
 WORKDIR /home/dev-user
 
+ENV PATH /home/dev-user/.npm-global/bin:$PATH
+
 RUN sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # neovim

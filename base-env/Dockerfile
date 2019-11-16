@@ -1,11 +1,6 @@
 FROM fedora:latest
 
-RUN     dnf install -y zsh &&\
-	dnf install -y curl &&\
-	dnf install -y neovim &&\
-	dnf install -y tmux &&\
-	dnf install -y nodejs &&\
-	dnf install -y git
+RUN dnf install -y zsh curl neovim tmux nodejs git unzip zip which
 RUN dnf install -y powerline-fonts
 
 RUN dnf install -y python

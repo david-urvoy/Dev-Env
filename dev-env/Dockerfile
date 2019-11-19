@@ -18,7 +18,7 @@ USER dev-user
 
 ENV NPM_CONFIG_PREFIX="/home/dev-user/.npm-global"
 
-RUN npm i -g typescript sass
+RUN npm i -g typescript tslint sass
 
 RUN npm i -g expo-cli
 

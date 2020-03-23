@@ -1,4 +1,4 @@
-FROM base-env:latest
+FROM davidurvoy/base-env:latest
 
 USER root
 
@@ -13,6 +13,7 @@ RUN dnf install -y java-1.8.0-openjdk-devel &&\
 #RUN sdk install kotlin
 
 #RUN dnf install -y haskell-platform
+RUN dnf install -y make automake gcc gcc-c++ kernel-devel
 
 USER dev-user
 
@@ -24,3 +25,6 @@ RUN npm i -g expo-cli
 
 RUN curl https://sh.rustup.rs -sSf | sh -s -- -y
 ENV PATH="/home/dev-user/.cargo/bin:${PATH}"
+
+RUN mkdir /home/dev-user/.m2
+

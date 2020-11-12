@@ -1,30 +1,27 @@
 FROM davidurvoy/base-env:latest
 
+#RUN mkdir /home/dev-user/.m2
+RUN mkdir -p /home/dev-user/.cargo
+#VOLUME [ "/home/dev-user/.cargo" ]
+
 USER root
-
 RUN dnf install -y nodejs
-
-RUN dnf install -y java-1.8.0-openjdk-devel &&\
-    dnf install -y maven
-
+#RUN dnf install -y java-1.8.0-openjdk-devel &&\
+#    dnf install -y maven
 #RUN curl -s "https://get.sdkman.io" | bash
 #RUN source "/root/.sdkman/bin/sdkman-init.sh"
 #RUN sdk install gradle 6.0
 #RUN sdk install kotlin
-
 #RUN dnf install -y haskell-platform
 RUN dnf install -y make automake gcc gcc-c++ kernel-devel
 
 USER dev-user
-
+### NPM ###
 ENV NPM_CONFIG_PREFIX="/home/dev-user/.npm-global"
-
 RUN npm i -g typescript tslint sass
+#RUN npm i -g expo-cli
 
-RUN npm i -g expo-cli
-
+### RUST ###
 RUN curl https://sh.rustup.rs -sSf | sh -s -- -y
 ENV PATH="/home/dev-user/.cargo/bin:${PATH}"
-
-RUN mkdir /home/dev-user/.m2
 
